@@ -12,6 +12,7 @@ This repository includes the following components:
 - `com.reports.utils.aspects`: Contains an aspect (`LoggingAspect`) for aspect-oriented logging.
 - `com.reports.utils.spark`: Contains classes for setting up ExtentReports with Spark for generating HTML reports.
 - `com.reports.utils.xray`: Includes the `XrayService` class for interacting with the Xray API to send test reports to Jira Xray.
+- `pom.xml`: Contains configurations for setting up Allure Reports for generating HTML reports.
 
 ## Setup
 
