@@ -1,0 +1,12 @@
+name: Reporters
+threadCount: 6
+parallel: methods
+verbose: 2
+configFailurePolicy: continue
+tests:
+  - name: Reporters
+    includedGroups: [ Spark ]
+    excludedGroups: [ ]
+    preserveOrder: true
+    classes:
+      - com.reports.test.Tests
