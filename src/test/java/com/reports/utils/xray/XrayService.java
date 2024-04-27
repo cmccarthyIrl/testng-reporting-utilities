@@ -31,7 +31,7 @@ public class XrayService {
                 .post("/api/v1/authenticate").then().extract().asPrettyString();
 
         // If token is not blank, import the test report to Xray
-        if(token.isBlank()){
+        if (token.isBlank()) {
             final Response response = RestAssured.given().auth().oauth2(JsonParser.parseString(token).getAsString())
                     .headers("Content-Type", "application/json")
                     .body(new File(System.getProperty("user.dir") + "target/surfire-reports/testng-results.xml"))

@@ -9,10 +9,10 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Xray {
 
-  String requirement() default "";
+    String requirement() default "";
 
-  String test() default "";
+    String test() default "";
 
-  String labels() default "";
+    String labels() default "";
 
 }

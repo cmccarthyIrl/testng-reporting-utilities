@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.regex.Matcher;
@@ -33,6 +34,7 @@ public class LoggingAspect {
 
     /**
      * Advice to log action descriptions.
+     *
      * @param joinPoint The join point.
      */
     @Before("logAction()")
@@ -52,6 +54,7 @@ public class LoggingAspect {
 
     /**
      * Advice to log step descriptions.
+     *
      * @param joinPoint The join point.
      */
     @Before("logStep()")
@@ -62,6 +65,7 @@ public class LoggingAspect {
 
     /**
      * Get the description from the annotation aspect.
+     *
      * @param joinPoint The join point.
      * @return The description.
      */

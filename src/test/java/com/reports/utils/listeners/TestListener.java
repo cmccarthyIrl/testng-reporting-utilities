@@ -46,8 +46,9 @@ public class TestListener implements ITestListener, ISuiteListener {
 
     /**
      * Updates the extent test based on the test result.
+     *
      * @param iTestResult The TestNG result.
-     * @param status The status of the test.
+     * @param status      The status of the test.
      */
     private void updateExtentTest(ITestResult iTestResult, Status status) {
         if (SparkTests.getTest() != null) {

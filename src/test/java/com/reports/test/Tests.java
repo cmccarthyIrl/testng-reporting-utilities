@@ -1,14 +1,14 @@
 package com.reports.test;
 
-import com.reports.utils.dataprovider.SparkDP;
-import com.reports.utils.logging.LogManager;
-import com.reports.utils.spark.SparkTests;
 import com.reports.utils.RetryAnalyser;
 import com.reports.utils.annotations.Action;
 import com.reports.utils.annotations.Step;
 import com.reports.utils.annotations.Xray;
+import com.reports.utils.dataprovider.SparkDP;
 import com.reports.utils.listeners.TestListener;
 import com.reports.utils.listeners.XrayListener;
+import com.reports.utils.logging.LogManager;
+import com.reports.utils.spark.SparkTests;
 import org.slf4j.MDC;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -23,7 +23,7 @@ public class Tests {
     String nestedElement = "Hello from the nested method";
 
     @BeforeMethod(alwaysRun = true)
-    public void foo(ITestResult iTestResult){
+    public void foo(ITestResult iTestResult) {
         SparkTests.createTest(iTestResult);
         MDC.put("logFileName", iTestResult.getName());
     }
@@ -93,5 +93,6 @@ public class Tests {
     }
 
     @io.qameta.allure.Step("Nested annotated step with global parameter [{this.nestedElement}]")
-    public void nestedAnnotatedStep() {}
+    public void nestedAnnotatedStep() {
+    }
 }
