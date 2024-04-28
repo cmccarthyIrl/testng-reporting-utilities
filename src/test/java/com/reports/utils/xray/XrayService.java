@@ -1,6 +1,7 @@
 package com.reports.utils.xray;
 
 import com.google.gson.JsonParser;
+import com.reports.utils.logging.LogManager;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
@@ -10,11 +11,14 @@ import java.io.File;
  * XrayService class for interacting with the Xray API.
  */
 public class XrayService {
+    private static final LogManager logger = new LogManager(XrayService.class);
 
     /**
      * Sends the test report to Jira Xray.
      */
     public void sendReportToJiraXray() {
+        logger.debug("Sending the report to JIRA XRAY");
+
         // Set the base URI for Xray API
         RestAssured.baseURI = "https://xray.cloud.getxray.app";
 
@@ -42,9 +46,7 @@ public class XrayService {
             response.prettyPrint();
 
         } else {
-            // Handle the case when token is blank
-            // Do something
+            logger.error("Could not retrieve an auth token from the Jira XRAY API");
         }
     }
-
 }

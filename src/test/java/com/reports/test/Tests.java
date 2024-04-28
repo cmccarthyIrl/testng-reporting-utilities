@@ -5,28 +5,14 @@ import com.reports.utils.annotations.Action;
 import com.reports.utils.annotations.Step;
 import com.reports.utils.annotations.Xray;
 import com.reports.utils.dataprovider.SparkDP;
-import com.reports.utils.listeners.TestListener;
-import com.reports.utils.listeners.XrayListener;
 import com.reports.utils.logging.LogManager;
-import com.reports.utils.spark.SparkTests;
-import org.slf4j.MDC;
 import org.testng.Assert;
-import org.testng.ITestResult;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners({TestListener.class, XrayListener.class})
-public class Tests {
+public class Tests extends BaseTest {
 
     LogManager logger = new LogManager(Tests.class);
-    String nestedElement = "Hello from the nested method";
-
-    @BeforeMethod(alwaysRun = true)
-    public void foo(ITestResult iTestResult) {
-        SparkTests.createTest(iTestResult);
-        MDC.put("logFileName", iTestResult.getName());
-    }
+    private final String nestedElement = "Hello from the nested method";
 
     @Test(groups = {"Pass", "Spark"}, description = "Pass test description")
     @Xray(requirement = "", test = "CALC-1231", labels = "JIRA_LABEL")

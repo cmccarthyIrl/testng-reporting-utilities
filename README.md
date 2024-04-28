@@ -12,6 +12,8 @@ This repository includes the following components:
 - `com.reports.utils.aspects`: Contains an aspect (`LoggingAspect`) for aspect-oriented logging.
 - `com.reports.utils.spark`: Contains classes for setting up ExtentReports with Spark for generating HTML reports.
 - `com.reports.utils.xray`: Includes the `XrayService` class for interacting with the Xray API to send test reports to Jira Xray.
+- `com.reports.utils.slack`: Includes the `SlackService` class for interacting with the Slack API to send test reports to Slack.
+- `com.reports.utils.email`: Includes the `EmailService` class to send test reports by email.
 - `pom.xml`: Contains configurations for setting up Allure Reports for generating HTML reports.
 
 ## Setup
@@ -25,6 +27,13 @@ git clone https://github.com/cmccarthyIrl/testng-reporting-utilities
 2. Add the necessary dependencies to your project build file.
 
 3. Use the provided classes, listeners, aspects, and services in your test automation framework.
+
+## Generate the TestNG Reports
+
+```
+mvn test -Dsuite=suite
+```
+
 
 ## Components
 
@@ -52,6 +61,14 @@ The framework is configured to automatically generate Allure reports to `target/
 ### XrayService
 
 The `XrayService` class provides methods for interacting with the Xray API to send test reports to Jira Xray. It handles authentication, test report import, and error handling.
+
+### Email Service
+
+The `EmailService` class handles sending emails with test execution results.
+
+### Slack Service
+
+The `SlackService` class provides methods for interacting with the Slack API to send test reports to Slack .
 
 ## Usage
 
